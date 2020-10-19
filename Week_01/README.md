@@ -1,6 +1,6 @@
 学习笔记
 
-### 1.
+### 1.第一次课第一题
 
 通过javap反编译后的代码如下：
 
@@ -82,3 +82,14 @@ public com.example.demo.Hello();
         78: dreturn								//68-78获取oddSum和oddCount的值并相除返回值
 ```
 
+### 第一次课第二题
+
+在1_2目录下执行如下命令即可：
+
+```
+java -cp .;  HelloClassLoader
+```
+
+### 第一次课第三题
+
+![内存参数关系](.\1_3\内存参数关系.png)
