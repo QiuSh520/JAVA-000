@@ -1,0 +1,121 @@
+Classfile /E:/git_workspace/JAVA-000/Week_01/Hello.class
+  Last modified 2020-10-19; size 485 bytes
+  MD5 checksum c85cde8fde9a667684ee1c559b87d2fe
+  Compiled from "Hello.java"
+public class com.example.demo.Hello
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #5.#20         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #4.#21         // com/example/demo/Hello.oddSum:D
+   #3 = Fieldref           #4.#22         // com/example/demo/Hello.oddCount:I
+   #4 = Class              #23            // com/example/demo/Hello
+   #5 = Class              #24            // java/lang/Object
+   #6 = Utf8               oddCount
+   #7 = Utf8               I
+   #8 = Utf8               oddSum
+   #9 = Utf8               D
+  #10 = Utf8               <init>
+  #11 = Utf8               ()V
+  #12 = Utf8               Code
+  #13 = Utf8               LineNumberTable
+  #14 = Utf8               calcOddAvg
+  #15 = Utf8               ([I)D
+  #16 = Utf8               StackMapTable
+  #17 = Class              #25            // "[I"
+  #18 = Utf8               SourceFile
+  #19 = Utf8               Hello.java
+  #20 = NameAndType        #10:#11        // "<init>":()V
+  #21 = NameAndType        #8:#9          // oddSum:D
+  #22 = NameAndType        #6:#7          // oddCount:I
+  #23 = Utf8               com/example/demo/Hello
+  #24 = Utf8               java/lang/Object
+  #25 = Utf8               [I
+{
+  public com.example.demo.Hello();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: dconst_0
+         6: putfield      #2                  // Field oddSum:D
+         9: return
+      LineNumberTable:
+        line 3: 0
+        line 6: 4
+
+  public double calcOddAvg(int[]);
+    descriptor: ([I)D
+    flags: ACC_PUBLIC
+    Code:
+      stack=5, locals=6, args_size=2
+         0: aload_1
+         1: astore_2
+         2: aload_2
+         3: arraylength
+         4: istore_3
+         5: iconst_0
+         6: istore        4
+         8: iload         4
+        10: iload_3
+        11: if_icmpge     56
+        14: aload_2
+        15: iload         4
+        17: iaload
+        18: istore        5
+        20: iload         5
+        22: iconst_2
+        23: irem
+        24: iconst_1
+        25: if_icmpne     50
+        28: aload_0
+        29: dup
+        30: getfield      #3                  // Field oddCount:I
+        33: iconst_1
+        34: iadd
+        35: putfield      #3                  // Field oddCount:I
+        38: aload_0
+        39: dup
+        40: getfield      #2                  // Field oddSum:D
+        43: iload         5
+        45: i2d
+        46: dadd
+        47: putfield      #2                  // Field oddSum:D
+        50: iinc          4, 1
+        53: goto          8
+        56: aload_0
+        57: getfield      #3                  // Field oddCount:I
+        60: ifne          68
+        63: aload_0
+        64: getfield      #2                  // Field oddSum:D
+        67: dreturn
+        68: aload_0
+        69: getfield      #2                  // Field oddSum:D
+        72: aload_0
+        73: getfield      #3                  // Field oddCount:I
+        76: i2d
+        77: ddiv
+        78: dreturn
+      LineNumberTable:
+        line 9: 0
+        line 10: 20
+        line 11: 28
+        line 12: 38
+        line 9: 50
+        line 16: 56
+        line 17: 63
+        line 20: 68
+      StackMapTable: number_of_entries = 4
+        frame_type = 254 /* append */
+          offset_delta = 8
+          locals = [ class "[I", int, int ]
+        frame_type = 41 /* same */
+        frame_type = 248 /* chop */
+          offset_delta = 5
+        frame_type = 11 /* same */
+}
+SourceFile: "Hello.java"
