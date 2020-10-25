@@ -1,0 +1,162 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<串行GC>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+java  -Dfile.encoding=UTF-8  -XX:+UseSerialGC -Xms128m -Xmx128m -Xloggc:gc.UseSerialGC128m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at java.util.Arrays.copyOf(Arrays.java:3332)
+        at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:124)
+        at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:674)
+        at java.lang.StringBuilder.append(StringBuilder.java:208)
+        at GCLogAnalysis.generateGarbage(GCLogAnalysis.java:56)
+        at GCLogAnalysis.main(GCLogAnalysis.java:25)
+
+
+java  -Dfile.encoding=UTF-8  -XX:+UseSerialGC -Xms512m -Xmx512m -Xloggc:gc.UseSerialGC512m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:9839
+
+
+java  -Dfile.encoding=UTF-8  -XX:+UseSerialGC -Xms2g -Xmx2g -Xloggc:gc.UseSerialGC2g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:12089
+
+
+java  -Dfile.encoding=UTF-8  -XX:+UseSerialGC -Xms4g -Xmx4g -Xloggc:gc.UseSerialGC4g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:8731
+
+java  -Dfile.encoding=UTF-8  -XX:+UseSerialGC -Xms8g -Xmx8g -Xloggc:gc.UseSerialGC8g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:7683
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<并行GC>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+java  -Dfile.encoding=UTF-8  -Xms128m -Xmx128m -Xloggc:gc.UseParallelGC128m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at GCLogAnalysis.generateGarbage(GCLogAnalysis.java:48)
+        at GCLogAnalysis.main(GCLogAnalysis.java:25)
+
+
+java  -Dfile.encoding=UTF-8  -Xms512m -Xmx512m -Xloggc:gc.UseParallelGC512m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:8819
+
+
+java  -Dfile.encoding=UTF-8  -Xms2g -Xmx2g -Xloggc:gc.UseParallelGC2g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:16120
+
+
+java  -Dfile.encoding=UTF-8  -Xms4g -Xmx4g -Xloggc:gc.UseParallelGC4g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:13144
+
+
+java  -Dfile.encoding=UTF-8  -Xms8g -Xmx8g -Xloggc:gc.UseParallelGC8g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:7157
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CMS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+java  -Dfile.encoding=UTF-8 -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -Xloggc:gc.UseConcMarkSweepGC128m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at GCLogAnalysis.generateGarbage(GCLogAnalysis.java:48)
+        at GCLogAnalysis.main(GCLogAnalysis.java:25)
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -Xloggc:gc.UseConcMarkSweepGC512m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:9959
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseConcMarkSweepGC -Xms2g -Xmx2g -Xloggc:gc.UseConcMarkSweepGC2g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:14382
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g -Xloggc:gc.UseConcMarkSweepGC4g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:13360
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseConcMarkSweepGC -Xms8g -Xmx8g -Xloggc:gc.UseConcMarkSweepGC8g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:12474
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<G1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+java  -Dfile.encoding=UTF-8 -XX:+UseG1GC -Xms128m -Xmx128m -Xloggc:gc.UseG1GC128m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at GCLogAnalysis.generateGarbage(GCLogAnalysis.java:51)
+        at GCLogAnalysis.main(GCLogAnalysis.java:25)
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseG1GC -Xms512m -Xmx512m -Xloggc:gc.UseG1GC512m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:10130
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseG1GC -Xms2g -Xmx2g -Xloggc:gc.UseG1GC2g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:13946
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseG1GC -Xms4g -Xmx4g -Xloggc:gc.UseG1GC4g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:17180
+
+
+java  -Dfile.encoding=UTF-8 -XX:+UseG1GC -Xms8g -Xmx8g -Xloggc:gc.UseG1GC8g.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+正在执行...
+执行结束!共生成对象次数:16776
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
