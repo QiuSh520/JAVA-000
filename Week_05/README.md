@@ -1,1 +1,25 @@
 学习笔记
+
+### 9_1、（选做）使Java里的动态代理，实现一个简单的AOP
+
+代码路径为【代码/spring01/src/main/java/io/kimmking/homework9_1】
+
+JDK自带的Proxy实现AOP：io.kimmking.homework9_1.SchoolJdkProxyAop
+
+CGlib实现的AOP代理：io.kimmking.homework9_1.SchoolCGLibProxyAop
+
+### 9_2、（必做）写代码实现Spring Bean的装配，方式越多越好（XML、Annotation都可以）,提
+
+交到Github
+
+代码路径为【代码/spring01/src/main/java/io/kimmking/homework9_2】
+
+Spring Bean的装配实现了四种方式：
+
+完全xml方式：子包【xml】中，完全基于xml配置文件实现
+
+混合方式：子包【mixed】中，对象的属性注入即使用xml也使用注解@Autowired
+
+annotation方式：子包【annotation】中，通过@Component+@Autowired实现
+
+configuration方式：子包【configuration】中，通过@Configuration+@Bean+@Autowired实现

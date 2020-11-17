@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="student123"
+          class="io.kimmking.homework9_2.xml.Student">
+        <property name="id" value="123"/>
+        <property name="name" value="KK123"/>
+    </bean>
+
+    <bean id="student100"
+          class="io.kimmking.homework9_2.xml.Student">
+        <property name="id" value="100"/>
+        <property name="name" value="KK100"/>
+    </bean>
+
+    <bean id="class1" class="io.kimmking.homework9_2.xml.Klass">
+        <property name="students">
+            <list>
+                <ref bean="student100"/>
+                <ref bean="student123"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="school" class="io.kimmking.homework9_2.xml.School">
+        <property name="class1" ref="class1"/>
+        <property name="student100" ref="student100"/>
+    </bean>
+</beans>
