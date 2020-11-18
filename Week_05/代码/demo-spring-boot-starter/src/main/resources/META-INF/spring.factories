@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.kimmking.springboot01
+  io.kimmking.springboot01.autoconfigure.DemoAutoConfiguration

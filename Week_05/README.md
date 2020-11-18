@@ -23,3 +23,10 @@ Spring Bean的装配实现了四种方式：
 annotation方式：子包【annotation】中，通过@Component+@Autowired实现
 
 configuration方式：子包【configuration】中，通过@Configuration+@Bean+@Autowired实现
+
+### 10_3（必做）给前面课程提供的Student/Klass/School实现自动配置和Starter
+
+starter代码路径为【代码/demo-spring-boot-starter】，使用starter代码路径为【代码/springboot01】。demo-spring-boot-starter的自动配置在包【io.kimmking.springboot01.autoconfigure】中，bean在包【io.kimmking.springboot01.domain】中。springboot01在pom中引入前者的依赖，在主类【io.kimmking.springboot01.DemoApplication】中是测试代码，在配置文件【application.properties】中可配置bean的属性
+
+
+

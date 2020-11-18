@@ -1,0 +1,34 @@
+{
+  "properties": [
+    {
+      "name": "demo.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Whether to enable Demo config.",
+      "defaultValue": true
+    },
+    {
+      "name": "demo.student123.id",
+      "type": "java.lang.Integer",
+      "description": "The id of student123.",
+      "defaultValue": 123
+    },
+    {
+      "name": "demo.student123.name",
+      "type": "java.lang.String",
+      "description": "The name of student123.",
+      "defaultValue": "kk123"
+    },
+    {
+      "name": "demo.student100.id",
+      "type": "java.lang.Integer",
+      "description": "The id of student100.",
+      "defaultValue": 100
+    },
+    {
+      "name": "demo.student100.name",
+      "type": "java.lang.String",
+      "description": "The name of student100.",
+      "defaultValue": "kk100"
+    }
+  ]
+}
