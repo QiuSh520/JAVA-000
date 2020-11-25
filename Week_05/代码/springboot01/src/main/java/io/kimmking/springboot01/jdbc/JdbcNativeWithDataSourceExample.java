@@ -1,5 +1,9 @@
 package io.kimmking.springboot01.jdbc;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,12 +11,13 @@ import java.util.List;
 /**
  * 使用事务，PrepareStatement方式，批处理方式，改进上述操作
  */
-public class JdbcNativeWithTransactionExample {
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true&serverTimezone=UTC";
+public class JdbcNativeWithDataSourceExample {
+    private static HikariDataSource dataSource;
 
-    static final String USER = "root";
-    static final String PASS = "123456";
+    static {
+        HikariConfig config = new HikariConfig("/hikari.properties");
+        dataSource = new HikariDataSource(config);
+    }
 
     public static void main(String[] args) {
         String sql1 = "insert into sys_dic( id,category,category_name,code,value_desc) values (null,'test','测试用','test_code1','测试')";
@@ -34,6 +39,8 @@ public class JdbcNativeWithTransactionExample {
 
         sql = "truncate TABLE sys_dic";
         executeUpdateWithTransaction(sql);
+
+        dataSource.close();
     }
 
     /**
@@ -49,7 +56,7 @@ public class JdbcNativeWithTransactionExample {
             //新版本的mysql驱动可自动加载
 //            Class.forName(JDBC_DRIVER);
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = dataSource.getConnection();
 
             conn.setAutoCommit(false);
 
@@ -93,7 +100,7 @@ public class JdbcNativeWithTransactionExample {
             //新版本的mysql驱动可自动加载
 //            Class.forName(JDBC_DRIVER);
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = dataSource.getConnection();
 
             conn.setAutoCommit(false);
 
@@ -141,7 +148,7 @@ public class JdbcNativeWithTransactionExample {
             //新版本的mysql驱动可自动加载
 //            Class.forName(JDBC_DRIVER);
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = dataSource.getConnection();
 
             stmt = conn.createStatement();
             for (String s : sqlArr) {
@@ -177,7 +184,7 @@ public class JdbcNativeWithTransactionExample {
             //新版本的mysql驱动可自动加载
 //            Class.forName(JDBC_DRIVER);
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = dataSource.getConnection();
 
             stmt = conn.createStatement();
 
@@ -234,7 +241,7 @@ public class JdbcNativeWithTransactionExample {
             //新版本的mysql驱动可自动加载
 //            Class.forName(JDBC_DRIVER);
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = dataSource.getConnection();
 
             stmt = conn.createStatement();
 

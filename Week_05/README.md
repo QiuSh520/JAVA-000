@@ -28,8 +28,10 @@ configuration方式：子包【configuration】中，通过@Configuration+@Bean+
 
 starter代码路径为【代码/demo-spring-boot-starter】，使用starter代码路径为【代码/springboot01】。demo-spring-boot-starter的自动配置在包【io.kimmking.springboot01.autoconfigure】中，bean在包【io.kimmking.springboot01.domain】中。springboot01在pom中引入前者的依赖，在主类【io.kimmking.springboot01.DemoApplication】中是测试代码，在配置文件【application.properties】中可配置bean的属性
 
-10_6（必做）研究一下JDBC接口和数据库连接池，掌握它们的设计和用法
+### 10_6（必做）研究一下JDBC接口和数据库连接池，掌握它们的设计和用法
+
 1）使用JDBC原生接口，实现数据库的增删改查操作。
 2）使用事务，PrepareStatement方式，批处理方式，改进上述操作。
 3）配置Hikari连接池，改进上述操作。提交代码到Github。
 
+代码在【代码/springboot01】中，具体包为【io.kimmking.springboot01.jdbc】，其中【io.kimmking.springboot01.jdbc.JdbcNativeExample】为第一步的 代码；【io.kimmking.springboot01.jdbc.JdbcNativeWithTransactionExample】为第二步代码；【io.kimmking.springboot01.jdbc.JdbcNativeWithDataSourceExample】为第三步代码
